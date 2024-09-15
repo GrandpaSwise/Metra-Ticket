@@ -29,6 +29,7 @@
         const gif1 = 'gif1.gif';  // Path to your first GIF
         const gif2 = 'gif2.gif';  // Path to your second GIF
 
+        // Switch GIFs on touch event
         gif.addEventListener('touchstart', function () {
             if (gif.src.includes(gif1)) {
                 gif.src = gif2;
@@ -36,7 +37,13 @@
                 gif.src = gif1;
             }
         });
+
+        // Prevent long press from showing context menu
+        gif.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
     </script>
 
 </body>
 </html>
+
